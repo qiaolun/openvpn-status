@@ -17,7 +17,12 @@ def datetimeformat(value, format='%Y-%m-%d %H:%M:%S'):
     ret = '[not a timestamp]'
     ts = 0
     try:
-        ts = int(value)
+        if isinstance(value, str):
+            ts = int(value)
+        elif isinstance(value, int):
+            ts = value;
+        else:
+            raise ValueError
     except exceptions.ValueError:
         return ret
 
@@ -38,6 +43,16 @@ def on_endpoint(endpoint, **kwargs):
         return ' '
 
 app.jinja_env.globals['on_endpoint'] = on_endpoint
+
+
+@app.template_filter('readable_size')
+def readable_size(num):
+    num = int(num)
+    for x in ['bytes','KB','MB','GB']:
+        if num < 1024.0 and num > -1024.0:
+            return "%3.1f%s" % (num, x)
+        num /= 1024.0
+    return "%3.1f%s" % (num, 'TB')
  
 
 @app.template_filter('urlencode')

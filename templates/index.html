@@ -21,7 +21,11 @@
                 {% for user in status.users %}
                 <tr>
                     {% for v in user %}
+                    {% if loop.index0 in (3, 4) %}
+                    <td>{{ v|readable_size }}</td>
+                    {% else %}
                     <td>{{ v }}</td>
+                    {% endif %}
                     {% endfor %}
                 </tr>
                 {% endfor %}
