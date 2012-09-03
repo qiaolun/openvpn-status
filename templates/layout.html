@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+    <head>
+        {% block head %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <title>{% block title %}{% endblock %} - OpenVPN Status</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+        {% block headlink %}
+        <!-- extra js,css -->
+        {% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        <div id="header">
+            {% block header %}
+
+            <dl>
+
+                <br />
+                <a class="{{ on_endpoint('index') }}" 
+                    href="{{ url_for('index') }}">Home</a> 
+                <br />
+
+                {% if session['USER'] is defined %}
+                <a href="{{ url_for('logout', k=session['LOGOUT_KEY']) }}">Logout<span>({{ session['USER'] }})</span></a> 
+                {% else %}
+                <a href="{{ url_for('login') }}">Login</a> 
+                {% endif %}
+            </dl>
+            
+            {% endblock %}
+        </div> 
+        <div id="content">
+            {% block content %}
+            {% endblock %}
+        </div> 
+        <div id="footer">
+            {% block footer %}
+            &copy; 2012
+            {% endblock %}
+        </div> 
+        {% endblock %}
+    </body>
+</html>

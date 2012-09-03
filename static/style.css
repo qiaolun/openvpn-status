@@ -1,0 +1,183 @@
+
+@charset "utf-8";
+
+/* global {{{ */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+body {
+    font-family: arial,sans-serif;    
+}
+
+label {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+body.dark {
+    background-color: #000;
+}
+/* }}} */
+
+#header {
+    width: 140px;
+    float: left;
+
+
+    background:#FFF9DD;
+    background:-moz-linear-gradient(top,#FFF9DD,#FFFFFF);
+    background:-webkit-gradient(linear,0 0,0 100%,from(#FFF9DD),to(#FFFFFF));
+
+}
+
+#header dl {
+    margin: 10px;
+}
+#header dl a {
+    height: 20px;
+    line-height: 20px;
+    display: block;
+    color: #333;
+    padding: 0 10px;
+
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#header dl a.on {
+    background-color: #EEDF91;
+}
+#header dl a:hover {
+    background-color: #FFEFA1;
+}
+#header dl select {
+    margin: 5px 10px;
+}
+
+
+#content {
+    
+    float: left;
+    background-color: #eee;
+    padding: 10px;
+
+    display: inline-block;
+}
+
+#content h1 {
+    background-color: #fff;
+    height: 30px;
+    line-height: 30px;
+    text-indent: 20px;
+    font-size: 16px;
+}
+
+#content #my_chart {
+
+    margin-top: 10px;
+
+}
+
+
+#footer {
+    clear: both;
+    margin-top: 10px;
+    margin-left: 140px;
+    width: 820px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #999;
+}
+
+.login-wrap {
+    margin: 50px auto;
+    width: 800px;
+    text-align: center;
+}
+
+.login-wrap table {
+    margin: 0 auto;
+}
+
+.login-wrap td {
+    padding: 5px;
+}
+
+.login-wrap td button {
+    padding: 5px 10px;
+}
+
+.index-wrap {
+    width: 800px;
+}
+
+.index-wrap .note {
+    line-height: 200%;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.auto-reload {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.auto-reload input {
+    vertical-align: middle;
+}
+
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+}   
+tr {
+    background-color: #fff;
+}
+
+
+th {
+    background-color: #ccc;
+}
+
+td ,
+th {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}   
+
+td.cc {
+    text-align: center;
+}   
+td.rr {
+    text-align: right;
+}   
+td.ll {
+    text-align: left;
+}   
+
+tr:nth-child(even) {background: #eee}
+tr:nth-child(odd) {background: #fff}
+
+   
+

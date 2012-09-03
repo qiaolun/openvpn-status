@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}
+{{ super() }}
+<style type="text/css">
+        .flashes {
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        .flashes li {
+            margin: 5px;
+            padding: 15px 35px;
+
+            direction: ltr;
+        }
+
+        .flashes li.error {
+            background-color: #fdd;
+        }
+        .flashes li.ok {
+            background-color: #dfd;
+        }
+
+</style>
+{% endblock %}
+{% block content %}
+
+<div class="login-wrap">
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for category, message in messages %}
+      <li class="{{ category }}">{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<form name="login" method="post" action="{{ url_for('login', next=request.args.get('next')) }}">
+    <table>
+        <caption>Login</caption>
+
+        <tr><td>Username</td><td><input type="text" name="username" value="" /></td></tr>
+        <tr><td>Password</td><td><input type="password" name="password" value="" /></td></tr>
+        <tr><td colspan="2"><button type="submit">Login</button></td></tr>
+    </table>
+</form>
+</div>
+{% endblock %}

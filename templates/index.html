@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}Status{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+
+<div class="index-wrap">
+    <h1>Status</h1>
+    <div class="note">
+
+        <table width="100%">
+            <thead>  
+                <tr>
+                    {% for k in status.users_header %}
+                    <th>{{ k }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in status.users %}
+                <tr>
+                    {% for v in user %}
+                    <td>{{ v }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+<br />
+
+        <table width="100%">
+            <thead>  
+                <tr>
+                    {% for k in status.routes_header %}
+                    <th>{{ k }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for route in status.routes %}
+                <tr>
+                    {% for v in route %}
+                    <td>{{ v }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div> 
+{% endblock %}
