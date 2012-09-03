@@ -3,6 +3,8 @@ OpenVPN Status
 
 A web OpenVPN management interface GUI **DEMO**
 
+![Screenshot](//raw.github.com/qiaolun/openvpn-status/master/docs/screenshot_1.png)
+
 Installation
 ------------
 
